@@ -17,7 +17,7 @@ export default function Home() {
 
     const betterSignOut = () => {
         console.log('Signing user out!');
-        // I will do this later
+        signOut();
     };
 
     return (
@@ -33,11 +33,11 @@ export default function Home() {
                             borderRadius: '4px',
                             color: 'white',
                             cursor: 'pointer',
-                            trasition: 'background 0.3s ease',
-                            display: isHovered ? 'inlineblock' : 'inline-block',
+                            transition: 'background 0.3s ease',
+                            display: isHovered ? 'inline-block' : 'inline-block',
                         }}
                         onClick={betterSignOut}
-                        onMouseEnter={() => (isHovered = true)}
+                        onMouseEnter={() => (setIsHovered(true))}
                         onMouseLeave={handleMouseLeave}
                     >
                         Sign out

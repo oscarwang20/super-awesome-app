@@ -10,17 +10,13 @@ import { Person } from "../../../common/types";
 
 export default function Home() {
   const { user } = useAuth();
-  console.log(user);
+  console.log(`DEBUG: ${user}`);
 
-  const people = useState<Person[]>([]);
-  const fetchPeople = async () => {
-    try {
-      const response = await fetch("localhost:8080/api/people");
-      const data = await response.json();
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    }
+  const p = useState<[]>([]);
+  const fetchSomeStuff = async () => {
+    const response = await fetch("localhost:8080/api/people");
+    const data = await response.json();
+    console.log(data);
   };
 
   return (

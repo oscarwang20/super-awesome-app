@@ -28,10 +28,11 @@ export default function Home() {
       ) : (
         <div className="flex flex-col items-center">
           <Button className="w-fit" onClick={() => signIn()}>
-            <div className="flex flex-row p-1 space-x-2">
+            {/* <div className="flex flex-row p-1 space-x-2">
               <Image src="/google.webp" alt="Google" width={20} height={20} />
               <p>Sign in with Google</p>
-            </div>
+            </div> */}
+            {"this is annoying so I commented it out"}
           </Button>
           <somecard
             person={{ first: "John", last: "Doe", age: 20, year: 2022 }}

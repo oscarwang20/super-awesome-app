@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useAuth } from "@/auth/AuthUserProvider";
 import { signIn, signOut } from "@/auth/auth";
 import { Button } from "@/components/ui/button";
-import UserCard from "@/components/users/UserCard";
+import { somecard } from "@/components/users/UserCard";
 import { useState } from "react";
 import { Person } from "../../../common/types";
 
@@ -33,7 +33,7 @@ export default function Home() {
               <p>Sign in with Google</p>
             </div>
           </Button>
-          <UserCard
+          <somecard
             person={{ first: "John", last: "Doe", age: 20, year: 2022 }}
           />
         </div>

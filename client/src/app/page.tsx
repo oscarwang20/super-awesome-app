@@ -4,10 +4,20 @@ import Image from "next/image";
 import { useAuth } from "@/auth/AuthUserProvider";
 import { signIn, signOut } from "@/auth/auth";
 import { Button } from "@/components/ui/button";
+import { somecard } from "@/components/users/UserCard";
+import { useState } from "react";
+import { Person } from "../../../common/types";
 
 export default function Home() {
   const { user } = useAuth();
-  console.log(user);
+  console.log(`DEBUG: ${user}`);
+
+  const p = useState<[]>([]);
+  const fetchSomeStuff = async () => {
+    const response = await fetch("localhost:8080/api/people");
+    const data = await response.json();
+    console.log(data);
+  };
 
   return (
     <div className="flex flex-row w-full justify-center p-4">
@@ -18,11 +28,15 @@ export default function Home() {
       ) : (
         <div className="flex flex-col items-center">
           <Button className="w-fit" onClick={() => signIn()}>
-            <div className="flex flex-row p-1 space-x-2">
+            {/* <div className="flex flex-row p-1 space-x-2">
               <Image src="/google.webp" alt="Google" width={20} height={20} />
               <p>Sign in with Google</p>
-            </div>
+            </div> */}
+            {"this is annoying so I commented it out"}
           </Button>
+          <somecard
+            person={{ first: "John", last: "Doe", age: 20, year: 2022 }}
+          />
         </div>
       )}
     </div>
